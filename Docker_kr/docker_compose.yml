@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  ubuntu:
+    build: ./ubuntu
+    stdin_open: true
+    image: cr/kontrolnaya-ubuntu:latest
+  
+  site:
+    build: ./nginx
+    ports:
+      - 8080:80
+    image: cr/kontrolnaya-site:latest 
